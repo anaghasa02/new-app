@@ -17,7 +17,7 @@ function NavBar(){
             <Link to="/contact">Contact</Link>
         </li>
      </ul>   
-    )
+    );
 }
 
 export default NavBar;

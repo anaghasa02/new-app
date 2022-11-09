@@ -4,17 +4,25 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import{Route,Link} from "react-router-dom";
+import { Route } from "react-router-dom";
+
+import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
+import { Routes } from "react-router";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Route exact path="/home"component={Home} />
-      <Route exact path="/about"component={About} />
-      <Route exact path="/projects"component={Projects} />
-      <Route exact path="/contact"component={Contact} />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/about" element={<About/>} />
+          <Route exact path="/projects" element={<Projects/>} />
+          <Route exact path="/contact" element={<Contact/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
